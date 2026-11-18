@@ -1,0 +1,10 @@
+name,P(photo),photo,caption
+0_photo_000000450867.png,0.9567126035690308,True,a baseball player swinging a bat at a ball
+1_photo_000000255942.png,0.9980565905570984,True,a blue bus parked in a parking lot
+2_photo_000000381473.png,0.8955718278884888,True,a brown bear walking in the snow
+3_photo_000000052172_gaussian.png,0.9962347149848938,True,a train traveling down the tracks in a track
+4_photo_000000252653_salt.png,0.9999991655349731,True,a young boy brushing his teeth in the bathroom
+5_painting.png,8.824878750601783e-05,False,
+6_schematics.png,5.6763367182601366e-21,False,
+7_sketch.png,0.00037018413422629237,False,
+8_text.png,1.2505823396856045e-16,False,

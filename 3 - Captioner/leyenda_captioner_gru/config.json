@@ -1,0 +1,15 @@
+{
+  "model": "gru",
+  "emb": 512,
+  "enc": 512,
+  "units": 768,
+  "dropout": 0.5,
+  "enc_drop": 0.2,
+  "T": 22,
+  "regions": 64,
+  "features": 2048,
+  "backbone": "inception",
+  "image_size": 299,
+  "beam_width": 5,
+  "length_power": 0.0
+}

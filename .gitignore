@@ -1,0 +1,7 @@
+# ImageNet weights of the two CNNs: Keras downloads them on first use (1.4 GB, over GitHub's limits)
+3 - Captioner/cnn_weights/
+__pycache__/
+.ipynb_checkpoints/
+.venv/
+# notebook caches and intermediate models (recomputed when absent)
+cache/

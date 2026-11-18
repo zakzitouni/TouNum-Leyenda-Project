@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Leyenda Project</title>
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<main>
+  <header class="top">
+    <p class="kicker">Leyenda Project · TouNum</p>
+    <h1>From an unidentified image to a captioned photograph</h1>
+    <p class="lede">Drop one or several digitised files. Each one goes through the complete workflow: binary classification
+      sorts photographs from documents, diagrams, drawings and paintings; the photographs are cleaned by the denoiser;
+      then a caption is written. The two versions below share the first two steps and differ only in the captioning model.</p>
+    <p class="authors">Zakarya Zitouni</p>
+    <ol class="flow" id="flow" aria-label="Workflow">
+      <li><span>Input</span>digitised file</li>
+      <li id="flow-1"><span>1</span>Binary classification</li>
+      <li id="flow-2"><span>2</span>Pre-processing</li>
+      <li><span>3</span>Captioning</li>
+    </ol>
+    <div class="order">
+      <div class="switch" id="order" role="radiogroup" aria-label="Workflow order">
+        <button type="button" role="radio" data-order="123" aria-checked="true">1 → 2 → 3</button>
+        <button type="button" role="radio" data-order="213" aria-checked="false">2 → 1 → 3</button>
+      </div>
+      <p class="order-note" id="order-note"></p>
+    </div>
+  </header>
+
+  <label class="drop" id="drop">
+    <input type="file" id="files" multiple>
+    <svg class="drop-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 16V4m0 0-4.5 4.5M12 4l4.5 4.5M4 15v3a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-3" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    <span class="drop-title">Drop photos, files or a whole folder here</span>
+    <span class="drop-sub">or click to choose · JPEG, PNG, WebP, BMP, TIFF · non-image files are skipped</span>
+  </label>
+
+  <div class="bar">
+    <p id="status">No image yet.</p>
+    <button type="button" id="clear" hidden>Clear results</button>
+  </div>
+
+  <section class="version" id="v-gru">
+    <header>
+      <span class="badge">A</span>
+      <div>
+        <p class="tag">Version A · main captioning model</p>
+        <h2>InceptionV3 + attention GRU</h2>
+        <p class="meta">CNN encoder and RNN decoder, two GRU layers of 768 cells · scores on COCO val2017</p>
+      </div>
+      <p class="scores"><span>CIDEr-D <b>1.056</b></span><span>BLEU-4 <b>0.325</b></span></p>
+    </header>
+    <ol class="rows"></ol>
+  </section>
+
+  <section class="version" id="v-transformer">
+    <header>
+      <span class="badge">B</span>
+      <div>
+        <p class="tag">Version B · second captioning model</p>
+        <h2>ConvNeXt-XL + Transformer</h2>
+        <p class="meta">3 encoder and 3 decoder layers, 8 attention heads · scores on COCO val2017</p>
+      </div>
+      <p class="scores"><span>CIDEr-D <b>1.395</b></span><span>BLEU-4 <b>0.414</b></span></p>
+    </header>
+    <ol class="rows"></ol>
+  </section>
+</main>
+<dialog class="viewer" id="viewer"></dialog>
+<script src="/app.js"></script>
+</body>
+</html>
